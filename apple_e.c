@@ -17,7 +17,7 @@ int main(int argc, char* argv[]){
   n *= log(10)/log(2);
   n++; // Always round up to get guard bit
   printf("%d binary bits\n",n);
-  n /= sizeof(unsigned char);
+  n /= 8;
   n++; // Always round up to get guard byte
   printf("%d integer(%lu)\n",n,sizeof(unsigned char));
 // Prepare memory for the result
