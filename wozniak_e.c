@@ -23,7 +23,7 @@ int main(int argc, char* argv[]){
   printf("%d binary bits\n",s);
   s /= sizeof(uint32_t)*8;
   s++; // Always round up to get guard byte
-  printf("%d integer(%lu)\n",n,sizeof(uint32_t));
+  printf("%d integer(%lu)\n",s,sizeof(uint32_t));
 // Prepare memory for the result
   efrac = (uint32_t*) malloc(sizeof(uint32_t)*(s+1));
   for(i=m;i>=2;i--){
