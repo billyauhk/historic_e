@@ -7,8 +7,10 @@
 #define base 1000000  // 10^dpl
 
 int main(int argc, char* argv[]){
+  if(argc<2)fprintf(stderr,"Not enough argument!\n"),exit(-1);
   int n = atoi(argv[1]);
   uint32_t* d = (uint32_t*) malloc(sizeof(uint32_t)*(n/dpl+2));
+  if(d==NULL)fprintf(stderr,"Not enough memory!\n"),exit(-1);
   int m;
   double test;
 
@@ -17,12 +19,13 @@ int main(int argc, char* argv[]){
   test = (n+1)*2.30258509;
 
   while(m*(log(m)-1.0)+0.5*log(6.2831852*m) <= test){
-    m += 1;
+    m++;
   }
 
   int i, j, k;
   uint64_t carry, temp;
   uint32_t* coef = (uint32_t*) malloc(sizeof(uint32_t)*(m+1));
+  if(coef==NULL)fprintf(stderr,"Not enough memory!\n"),exit(-1);
 
 // Initialize the digits
   for(j=2;j<=m;j++)coef[j]=1;

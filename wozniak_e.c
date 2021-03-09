@@ -26,6 +26,7 @@ int main(int argc, char* argv[]){
   printf("%d integer(%lu)\n",s,sizeof(uint32_t));
 // Prepare memory for the result
   efrac = (uint32_t*) malloc(sizeof(uint32_t)*(s+1));
+  if(efrac==NULL)fprintf(stderr,"Not enough memory!\n"),exit(-1);
   for(i=m;i>=2;i--){
     // Division loop
     carry = 1;
