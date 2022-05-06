@@ -47,7 +47,7 @@ int main(int argc, char* argv[]){
   putchar('\n');*/
 
 // Output in decimal
-// A rather slow approach, but not correct!?
+// A rather slow approach but works
   printf("2.");
   for(i=0;i<n;i++){
     carry = 0;
